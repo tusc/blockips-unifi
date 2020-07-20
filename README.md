@@ -45,8 +45,7 @@ Now go to Firewall, Rule IPv4, WAN OUT. Create a new firewall rule.
  
  ![Blockgroup](/images/firewall2.png)
  
- At this point we're ready proceed to configuring the files we downloaded at the beginning of this section. Using you preferred editor go ahead and open up config.php. 
- You'll need to populate your unifi credentials for the controller (controlleruser, controllerpassword) as well as the url (controllerurl).
+ At this point we're ready to edit the files we downloaded at the beginning of this section. Using you preferred editor go ahead and open up config.php on the UDM or Linux server. You'll need to populate your unifi credentials for the controller (controlleruser, controllerpassword) as well as the url (controllerurl).
  
  In addition, make sure the site name is correct along with the firewall group name and firewall rule name. If you used the defaults above for the firewall group and firewawll rule then
  there's no need to change the values.
