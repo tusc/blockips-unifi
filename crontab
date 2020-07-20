@@ -1,0 +1,18 @@
+# do daily/weekly/monthly maintenance
+# min	hour	day	month	weekday	command
+*/15	*	*	*	*	run-parts /etc/periodic/15min
+0	*	*	*	*	run-parts /etc/periodic/hourly
+0	2	*	*	*	run-parts /etc/periodic/daily
+0	3	*	*	6	run-parts /etc/periodic/weekly
+0	5	1	*	*	run-parts /etc/periodic/monthly
+
+
+# Block the following IP address at 9PM.
+# Uncomment one of the two lines below. The first one will not log any output from the script. The second will send it to a text file.
+#0	21	*	*	*	 /usr/bin/php /add_block_firewall.php 192.168.200.10 192.168.200.11 192.168.200.12  > /dev/null
+#0	21	*	*	*	 /usr/bin/php /add_block_firewall.php 192.168.200.10 192.168.200.11 192.168.200.12    >> /var/log/blockfile.txt 2>&1
+
+
+# Unblock these IP addresses at 7AM. The same applies here.
+#0	7	*	*	*	 /usr/bin/php /del_block_firewall.php 192.168.200.10 192.168.200.11 192.168.200.12  > /dev/null
+#0	7	*	*	*	 /usr/bin/php /del_block_firewall.php 192.168.200.10 192.168.200.11 192.168.200.12    >> /var/log/blockfile.txt 2>&1
