@@ -51,8 +51,7 @@ Now go to Firewall, Rule IPv4, WAN OUT. Create a new firewall rule.
  there's no need to change the values.
  
  Finally, we need to edit the crontab file that schedules when the scripts run to add and remove IPs from the firewall group. You should see two examples for IP address addidtions and deletions. Uncomment one of the lines for each and make sure your list of IPs to block is correct. The first option does not log any activity. The second logs to a file on the container under /var/log. If your not familiar with cron's syntax take note of the first line in the file as it states what each of the columns represent. I've setup an example in the file for blocking IPs at 9 PM and removing the blocks at 7 AM.
- In the next section you'll want to make sure you specify your local timezone as this reflects when the cron jobs will run. Replace the example IP addresses in the crontab file with the ones
- you want to block at the designated time.
+ In the next section you'll want to make sure you specify your local timezone as this reflects when the cron jobs will run.
  
 # Installing
 
