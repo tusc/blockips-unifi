@@ -21,7 +21,7 @@ The script makes Unifi RESTful API calls to dynamically update the firewall grou
 
 # Preparation
 
-The docker containter can run on a Linux amd64 system or directly on a UDM/UDM Pro. Before you pull down the image you'll need to grab a couple of files first. For the example
+The docker containter can run on a Linux amd64 server or directly on a UDM/UDM Pro. Before you pull down the image you'll need to grab a couple of files first. For the example
 below we will be running directly on a UDM which explains the paths. If running on a Linux amd64 server just replace /mnt/data with a persistent path on your server.
 
 ```
