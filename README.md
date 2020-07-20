@@ -99,3 +99,5 @@ docker stop blockips-unifi
 docker rm blockips-unifi
 docker rmi docker.io/tusc/blockips-unifi
 ```
+Lastly, remember to remove the firewall block rule and firewall group from the controller.
+
