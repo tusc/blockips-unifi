@@ -45,15 +45,15 @@ Now go to Firewall, Rule IPv4, WAN OUT. Create a new firewall rule.
  
  ![Blockgroup](/images/firewall2.png)
  
- At this point we're ready to edit the files we downloaded at the beginning of this section. Using you preferred editor go ahead and open up config.php on the UDM or Linux server. You'll need to populate your unifi credentials for the controller (controlleruser, controllerpassword) as well as the url (controllerurl).
+ At this point we're ready to edit the files we downloaded at the beginning of this section. Using your preferred editor go ahead and open up config.php on the UDM or Linux server. You'll need to populate your unifi credentials for the controller (controlleruser, controllerpassword) as well as the url (controllerurl).
  
  In addition, make sure the site name is correct along with the firewall group name and firewall rule name. If you used the defaults above for the firewall group and firewawll rule then
  there's no need to change the values.
  
- Finally, we need to edit the crontab file that schedules when the scripts run to add and remove IPs from the firewall group. You should see two examples for addidtions and deletions.
+ Finally, we need to edit the crontab file that schedules when the scripts run to add and remove IPs from the firewall group. You should see two examples for IP address addidtions and deletions. Uncomment one of the lines for each and make sure your list of IPs to block is correct. The first option does not log any activity. The second logs to a file on the container under /var/log. If your not familiar with cron's syntax take note of the first line in the file as it states what each of the columns represent. I've setup an example in the file for blocking IPs at 9 PM and removing the blocks at 7 AM.
  In the next section you'll want to make sure you specify your local timezone as this reflects when the cron jobs will run. Replace the example IP addresses in the crontab file with the ones
  you want to block at the designated time.
-
+ 
 # Installing
 
 In order to start the containter you will need to type the  command below: <br/>
