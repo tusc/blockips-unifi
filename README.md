@@ -79,12 +79,12 @@ If you're interested in compiling your own version I have a Dockerfile available
 
 # Validating configuration
 
-You can test your credentials are valid by adding a test IP to the list (container needs to be up and running):
+You can test your credentials are valid by adding a test IP to the block list (container needs to be up and running):
 
 ```
 docker exec -it blockips-unifi php /add_block_firewall.php 192.168.200.10
 ```
-Watch the firewall group page on the controller and you should see the count go up by one.
+Watch the firewall group page on the controller and you should see the count go up by one. Try to access the Internet with that address.
 
 Conversly, removing the IP from the list can be done with this command:
 
