@@ -66,7 +66,7 @@ docker run -it -d --name blockips-unifi  -e "TZ=America/Chicago" \
 ```
 This will download the latest image to your server.
 
-If you're running this containter on a UDM and have you reboot, you can manually restart the containter with the commmand below:
+If you're running this containter on a UDM and have to reboot, you can manually restart the containter with the commmand below:
 ```
 docker start blockips-unifi
 ```
