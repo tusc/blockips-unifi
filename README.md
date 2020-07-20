@@ -1,4 +1,4 @@
-# Block IPs on Unifi controllers
+# Block IPs on UDM/UXG firewalls
 
 ## Distributed under MIT license
 
