@@ -18,7 +18,7 @@ the household and you want to restrict their Internet usage. Using the great php
 this script will automatically add and delete IP addresses from a firewall group defined on your Unifi controller. This firewall group has a predefined rule in the "WAN OUT" section to automatically
 drop traffic from any IP on the list.
 
-The script makes Unifi RESTul API calls to dynamically update the firewall group with IPs you pass to it. The scheduler is esentially cron.
+The script makes Unifi RESTful API calls to dynamically update the firewall group with IPs you pass to it. The scheduler is esentially cron.
 
 # Preparation
 
