@@ -84,7 +84,7 @@ You can test your credentials are valid by adding a test IP to the block list (c
 ```
 docker exec -it blockips-unifi php /add_block_firewall.php 192.168.200.10
 ```
-Watch the firewall group page on the controller and you should see the count go up by one. Try to access the Internet with that address.
+Watch the firewall group page on the Unifi controller and you should see the count go up by one. Try to access the Internet with that address.
 
 Conversly, removing the IP from the list can be done with this command:
 
