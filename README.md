@@ -13,7 +13,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # About
 
-This docker image allows you to block and unblock IP addresses from your Unifi firewall list at different times during the day. This can be useful when you have kids in
+This docker container allows you to block and unblock IP addresses from your Unifi firewall list at certain times during the day. This can be useful when you have kids in
 the household and you want to restrict their Internet usage. Using the great php client class from malle-pietje ( https://github.com/Art-of-WiFi/UniFi-API-client ),
 this script will automatically add and delete IP addresses from a firewall group defined on your Unifi controller. This firewall group has a predefined rule in the "WAN OUT" section to automatically
 drop traffic from any IP on the list.
