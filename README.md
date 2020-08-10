@@ -114,6 +114,7 @@ To remove the docker instance and image you'll need to type the following at the
 docker stop blockips-unifi
 docker rm blockips-unifi
 docker rmi docker.io/tusc/blockips-unifi
+rm -rf /mnt/data/blockips-unifi
 ```
 Lastly, remember to remove the firewall block rule and firewall group from the controller.
 
