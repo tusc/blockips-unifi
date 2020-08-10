@@ -54,6 +54,22 @@ Now go to Firewall, Rule IPv4, WAN OUT. Create a new firewall rule.
  
 # Installing
 
+
+If the container will be running on the UDM/pro you need to also install the CNI Macvlan tools for docker. On a typical Linux server these tools are already installed. You can use boostchicken's script for this which is refernced on this page: https://github.com/boostchicken/udm-utilities/blob/master/dns-common/on_boot.d/10-dns.sh.
+From the udm login prompt, enter the following (one time install)
+
+```
+## network configuration and startup:
+CNI_PATH=/mnt/data/podman/cni
+if [ ! -f "$CNI_PATH"/macvlan ]; then
+    mkdir -p $CNI_PATH
+    curl -L https://github.com/containernetworking/plugins/releases/download/v0.8.6/cni-plugins-linux-arm64-v0.8.6.tgz | tar -xz -C $CNI_PATH
+fi
+
+mkdir -p /opt/cni
+rm -f /opt/cni/bin
+ln -s $CNI_PATH /opt/cni/bin
+```
 In order to start the containter you will need to type the  command below: <br/>
 **NOTE** Make sure to update the timezone variable TZ to your local timezone. You can find a list here: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
