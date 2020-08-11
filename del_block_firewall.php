@@ -26,7 +26,6 @@ if (empty($argv[1])) {
  * initialize the UniFi API connection class and log in to the controller and do our thing
  */
 
-$debug = false;
 $unifi_connection = new UniFi_API\Client($controlleruser, $controllerpassword, $controllerurl, $site_id, $controllerversion);
 $set_debug_mode   = $unifi_connection->set_debug($debug);
 $loginresults     = $unifi_connection->login();
