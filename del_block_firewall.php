@@ -34,7 +34,7 @@ $loginresults     = $unifi_connection->login();
 /** make sure firewall rule exists **/
 $data             = $unifi_connection->list_firewallrules();
 $rule_idx = array_search($rule_name,array_column($data,'name'));
-if ($rule_idx == true) {
+if ($rule_idx !== false) {
 /**   echo json_encode($data[$rule_idx], JSON_PRETTY_PRINT);
 **/
    $rule_id = $data[$rule_idx]->_id;
@@ -50,7 +50,7 @@ $data             = $unifi_connection->list_firewallgroups();
 /** search for group name as specified above **/
 $grp_idx = array_search($group_name,array_column($data,'name'));
 
-if ($grp_idx == true) {
+if ($grp_idx !== false) {
    $group_id = $data[$grp_idx]->_id;
    echo "Id is ", $group_id,  "\r\n";;
 } else {
@@ -70,7 +70,7 @@ for ($i = 1; $i < $argc; $i++) {
 
   $pos = array_search($ip_addr,$data[$grp_idx]->group_members);
 
-  if ($pos == true) {
+  if ($pos !== false) {
      echo "position is $pos\r\n";
 
      echo "IP found! Deleting....",  "\r\n";;
