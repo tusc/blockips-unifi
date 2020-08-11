@@ -26,7 +26,6 @@ if (empty($argv[1])) {
  * initialize the UniFi API connection class and log in to the controller and do our thing
  */
 
-$debug = false;
 $unifi_connection = new UniFi_API\Client($controlleruser, $controllerpassword, $controllerurl, $site_id, $controllerversion);
 $set_debug_mode   = $unifi_connection->set_debug($debug);
 $loginresults     = $unifi_connection->login();
@@ -35,7 +34,7 @@ $loginresults     = $unifi_connection->login();
 /** make sure firewall rule exists **/
 $data             = $unifi_connection->list_firewallrules();
 $rule_idx = array_search($rule_name,array_column($data,'name'));
-if ($rule_idx == true) {
+if ($rule_idx !== false) {
 /**   echo json_encode($data[$rule_idx], JSON_PRETTY_PRINT);
 **/
    $rule_id = $data[$rule_idx]->_id;
@@ -52,7 +51,7 @@ $data             = $unifi_connection->list_firewallgroups();
 $grp_idx = array_search($group_name,array_column($data,'name'));
 
 
-if ($grp_idx == true) {
+if ($grp_idx !== false) {
    $group_id = $data[$grp_idx]->_id;
    echo "Id is ", $group_id, "\r\n";
 } else {
